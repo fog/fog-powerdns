@@ -44,13 +44,18 @@ module Fog
 
           @api_key = options[:api_key]
           @connection_options = options[:connection_options] || {}
-          @host       = options[:host]      || "127.0.0.1:8081"
+          @host       = options[:host]      || "127.0.0.1"
           @persistent = options[:persistent]|| false
           @port       = options[:port]      || 8081
           @scheme     = options[:scheme]    || 'http'
+          puts @api_key
           puts @persistent
           puts @connection_options
-          @connection = Fog::XML::Connection.new("#{@scheme}:#{@host}:#{@port}", @persistent, @connection_options)
+          puts @scheme
+          puts @host
+          puts @port
+          # @connection_options[:api_key] = @api_key
+          @connection = Fog::XML::Connection.new("#{@scheme}://#{@host}:#{@port}", @persistent, @connection_options.to_s)
         end
 
         def reload
