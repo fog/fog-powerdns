@@ -1,4 +1,4 @@
-require "fog/pdns/version"
+require 'fog/pdns/version'
 
 module Fog
   module Pdns

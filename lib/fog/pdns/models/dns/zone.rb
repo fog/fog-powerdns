@@ -7,16 +7,16 @@ module Fog
       class Zone < Fog::Model
         identity :zone_id
 
-        attribute :domain,    :aliases => 'name'
+        attribute :zone,    :aliases => 'name'
 
         def destroy
-          service.delete_domain(identity)
+          service.delete_zone(identity)
           true
         end
 
         def save
-          requires :domain
-          data = service.create_domain(domain).body["domain"]
+          requires :zone
+          data = service.create_zone(zone).body["zone"]
           merge_attributes(data)
           true
         end

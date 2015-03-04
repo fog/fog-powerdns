@@ -23,13 +23,13 @@ module Fog
       request :list_server_configs
       request :get_server_config
       request :update_server_config
-      request :list_domains
-      request :create_domains
-      request :get_domain
-      request :delete_domain
+      request :list_zone
+      request :create_zone
+      request :get_zone
+      request :delete_zone
       request :update_rrsets
-      request :update_domain
-      request :notify_domain
+      request :update_zone
+      request :notify_zone
       request :retrieve_zone
       request :list_cryptokeys
       request :get_cryptokey
