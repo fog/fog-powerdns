@@ -2,20 +2,20 @@ module Fog
   module DNS
     class PowerDNS
       class Real
-        # Get details of a DNS zone
+        # Retrieves server stats
         #
         # ==== Parameters
-        # * zone<~String> - Zone id
+        # * server<~String> - server id
         #
         # ==== Returns
         # TODO: Fill this out
         #
 
-        def list_zones(server)
+        def get_server_stats(server)
           request(
               :expects  => 200,
               :method   => 'GET',
-              :path     => "/servers/#{server}/zones"
+              :path     => "/servers/#{server}/statistics"
           )
         end
 

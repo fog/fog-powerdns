@@ -2,20 +2,20 @@ module Fog
   module DNS
     class PowerDNS
       class Real
-        # Get details of a DNS zone
+        # Get details of all pdns servers
         #
         # ==== Parameters
-        # * zone<~String> - Zone id
+        #
         #
         # ==== Returns
         # TODO: Fill this out
         #
 
-        def list_zones(server)
+        def list_zones()
           request(
               :expects  => 200,
               :method   => 'GET',
-              :path     => "/servers/#{server}/zones"
+              :path     => "/servers"
           )
         end
 

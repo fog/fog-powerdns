@@ -15,7 +15,7 @@ module Fog
           request(
               :expects  => 200,
               :method   => 'GET',
-              :path     => "servers/#{server}/zones/#{zone}"
+              :path     => "/servers/#{server}/zones/#{zone}"
           )
         end
 

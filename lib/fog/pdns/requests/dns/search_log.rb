@@ -2,20 +2,21 @@ module Fog
   module DNS
     class PowerDNS
       class Real
-        # Get details of a DNS zone
+        # Searches for term in server logs
         #
         # ==== Parameters
-        # * zone<~String> - Zone id
+        # * server<~String> - server id
+        # * term<~String> - search term
         #
         # ==== Returns
         # TODO: Fill this out
         #
 
-        def list_zones(server)
+        def search_log(server, term)
           request(
               :expects  => 200,
               :method   => 'GET',
-              :path     => "/servers/#{server}/zones"
+              :path     => "/servers/#{server}/search-log?q=#{term}"
           )
         end
 

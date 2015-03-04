@@ -1,5 +1,5 @@
 require 'fog/core/model'
-require 'fog/dns/models/dns/rrsets'
+require 'fog/pdns/models/dns/rrsets'
 
 module Fog
   module DNS
@@ -8,6 +8,7 @@ module Fog
         identity :zone_id
 
         attribute :zone,    :aliases => 'name'
+        attribute :server_id
 
         def destroy
           service.delete_zone(identity)

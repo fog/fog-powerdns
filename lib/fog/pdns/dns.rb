@@ -6,7 +6,7 @@ module Fog
       requires :api_key
       recognizes :host, :port, :persistent, :scheme, :timeout
 
-      model_path 'fog/dns/models/dns'
+      model_path 'fog/pdns/models/dns'
       model       :server
       collection  :servers
       model       :server_config
@@ -17,13 +17,13 @@ module Fog
       model       :crypto_key
       collection  :crypto_keys
 
-      request_path 'fog/dns/requests/dns'
+      request_path 'fog/pdns/requests/dns'
       request :list_servers
       request :get_server
       request :list_server_configs
       request :get_server_config
       request :update_server_config
-      request :list_zone
+      request :list_zones
       request :create_zone
       request :get_zone
       request :delete_zone
