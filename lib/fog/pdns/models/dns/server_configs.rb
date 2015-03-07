@@ -8,6 +8,19 @@ module Fog
       class ServerConfigs < Fog::Collection
         model Fog::DNS::PowerDNS::ServerConfig
 
+        def all
+          clear
+          data = service.list_server_configs.body
+          load(data)
+        end
+
+        def get(config)
+          data = service.get_server_config(config).body
+          disp = new(data)
+          disp
+        rescue Fog::Service::NotFound
+          puts 'help!'
+        end
       end
     end
   end

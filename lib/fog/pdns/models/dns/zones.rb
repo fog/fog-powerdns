@@ -7,7 +7,13 @@ module Fog
       class Zones < Fog::Collection
         model Fog::DNS::PowerDNS::Zone
 
-        attribute :zone,    :aliases => 'name'
+        # attribute :zone,    :aliases => 'name'
+
+        def all
+          clear
+          data = service.list_zones.body
+          load(data)
+        end
 
         def get(zone)
           data = service.get_zone(zone).body['zone']

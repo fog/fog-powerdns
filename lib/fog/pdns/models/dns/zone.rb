@@ -15,8 +15,18 @@ module Fog
           true
         end
 
+        # end
+        # def rrsets
+        #   @rrsets ||= begin
+        #                 Fog::DNS::PowerDNS::RRsets.new(
+
+        #                 )
+        #   end
+        # end
+
         def save
           requires :zone
+          # TODO: What does this do?
           data = service.create_zone(zone).body["zone"]
           merge_attributes(data)
           true

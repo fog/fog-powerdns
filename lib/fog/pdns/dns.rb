@@ -3,7 +3,7 @@ require 'fog/pdns/core'
 module Fog
   module DNS
     class PowerDNS < Fog::Service
-      requires :api_key
+      requires :pdns_api_key
       recognizes :host, :port, :persistent, :scheme, :timeout
 
       model_path 'fog/pdns/models/dns'
@@ -42,7 +42,7 @@ module Fog
       class Real
         def initialize(options={})
 
-          @api_key = options[:api_key]
+          @pdns_api_key = options[:pdns_api_key]
           @connection_options = options[:connection_options] || {}
           @host       = options[:host]      || "127.0.0.1"
           @persistent = options[:persistent]|| false
@@ -54,8 +54,8 @@ module Fog
           puts @scheme
           puts @host
           puts @port
-          # @connection_options[:api_key] = @api_key
-          @connection = Fog::XML::Connection.new("#{@scheme}://#{@host}:#{@port}", @persistent, @connection_options.to_s)
+          # TODO: Figure out why to_s is needed
+          @connection = Fog::XML::Connection.new("#{@scheme}://#{@host}:#{@port}", @persistent, @connection_options)
         end
 
         def reload
@@ -64,7 +64,7 @@ module Fog
 
         def request(params)
           params[:headers] ||= {}
-          params[:headers].merge!("X-API-key" => "#{@api_key}")
+          params[:headers].merge!("X-API-key" => "#{@pdns_api_key}")
           params[:headers].merge!(
               "Accept" => "application/json",
               "Content-Type" => "application/json"
