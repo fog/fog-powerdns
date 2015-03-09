@@ -6,16 +6,16 @@ require 'fog/pdns/version'
 Gem::Specification.new do |spec|
   spec.name          = "fog-pdns"
   spec.version       = Fog::Pdns::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
+  spec.authors       = ["Chris Luo"]
+  spec.email         = ["luo_christopher@bah.com"]
 
   if spec.respond_to?(:metadata)
     spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
   end
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Module for the 'fog' gem to support PowerDNS DNS services.}
+  spec.description   = %q{This library can be used as a module for 'fog' or as a standalone provider to use PowerDNS DNS services in applications.}
+  spec.homepage      = "http://github.com/cluobah/fog-pdns"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
@@ -25,4 +25,8 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.8"
   spec.add_development_dependency "rake", "~> 10.0"
+
+  spec.add_dependency 'fog-core', '~> 1.27'
+  spec.add_dependency 'fog-json', '~>1.0'
+  spec.add_dependency 'fog-xml', '~>0.1'
 end
