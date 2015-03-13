@@ -14,7 +14,7 @@ module Fog
         # * response<~Excon::Response>:
         #   * body<~Hash>:
         #   * status<~Integer> - 204 when successful
-        # TODO: Verify this returns
+        #
 
         def delete_zone(server, zone)
           request(

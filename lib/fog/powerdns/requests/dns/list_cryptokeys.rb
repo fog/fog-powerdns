@@ -5,7 +5,8 @@ module Fog
         # Get details of all public cryptokeys
         #
         # ==== Parameters
-        # Need server_id, zone_id
+        # server<~String> - server id
+        # zone<~String> - zone id
         #
         # ==== Returns
         # * response<~Excon::Response>:

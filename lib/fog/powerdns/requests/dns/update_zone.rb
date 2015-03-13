@@ -5,7 +5,9 @@ module Fog
         # Modify a single zone in PowerDNS
         #
         # ==== Parameters
-        # server, name, options
+        # server<~String> - server id
+        # zone<~String> - zone id
+        # options<~Hash> - pairs enumerated below
         #
         #
         # ==== Returns

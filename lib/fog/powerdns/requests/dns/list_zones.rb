@@ -5,7 +5,7 @@ module Fog
         # Get details of a server's DNS zones
         #
         # ==== Parameters
-        # * zone<~String> - server id
+        # * server<~String> - server id
         #
         # ==== Returns
         # * response<~Excon::Response>:

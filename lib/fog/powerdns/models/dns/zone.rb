@@ -29,7 +29,6 @@ module Fog
 
         def save
           requires :zone
-          # TODO: What does this do?
           data = service.create_zone(zone).body["zone"]
           merge_attributes(data)
           true
