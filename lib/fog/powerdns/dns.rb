@@ -1,4 +1,4 @@
-require 'fog/pdns/core'
+require 'fog/powerdns/core'
 
 module Fog
   module DNS
@@ -6,18 +6,12 @@ module Fog
       requires :pdns_api_key
       recognizes :host, :port, :persistent, :scheme, :timeout
 
-      model_path 'fog/pdns/models/dns'
-      model       :server
-      collection  :servers
-      model       :server_config
-      collection  :server_configs
+      model_path 'fog/powerdns/models/dns'
       model       :zone
       collection  :zones
-      collection  :rrsets
-      model       :crypto_key
-      collection  :crypto_keys
+      # collection  :rrsets
 
-      request_path 'fog/pdns/requests/dns'
+      request_path 'fog/powerdns/requests/dns'
       request :list_servers
       request :get_server
       request :list_server_configs
@@ -54,7 +48,6 @@ module Fog
           puts @scheme
           puts @host
           puts @port
-          # TODO: Figure out why to_s is needed
           @connection = Fog::XML::Connection.new("#{@scheme}://#{@host}:#{@port}", @persistent, @connection_options)
         end
 

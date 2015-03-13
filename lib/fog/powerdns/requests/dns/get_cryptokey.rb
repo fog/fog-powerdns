@@ -11,7 +11,16 @@ module Fog
 
         #
         # ==== Returns
-        # TODO: Fill this out
+        # * response<~Excon::Response>:
+        #   * body<~Hash>:
+        #     * 'type': <~String>,
+        #     * 'id': <~Integer>,
+        #     * 'active': <~Boolean>,
+        #     * 'keytype': <~String>,
+        #     * 'dnskey': <~String>,
+        #     * 'content': <~String>,
+        #     * 'ds': <~Array>
+        #   * status<~Integer> - 200 when successful
         #
 
         def get_cryptokey(server, zone, cryptokey)
@@ -19,7 +28,7 @@ module Fog
               :expects  => 200,
               :method   => 'GET',
               :path     => "/servers/#{server}/zones/#{zone}/cryptokeys/#{cryptokey}"
-          )
+          ).body
         end
 
       end

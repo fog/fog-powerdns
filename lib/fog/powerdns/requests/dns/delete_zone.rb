@@ -8,9 +8,17 @@ module Fog
         # ==== Parameters
         # * server<~String> - server id
         # * zone<~String> - zone id
+        #
+        #
+        # ==== Returns
+        # * response<~Excon::Response>:
+        #   * body<~Hash>:
+        #   * status<~Integer> - 204 when successful
+        # TODO: Verify this returns
+
         def delete_zone(server, zone)
           request(
-              :expects  => 200,
+              :expects  => 204,
               :method   => 'DELETE',
               :path     => "/servers/#{server}/zones/#{zone}"
           )

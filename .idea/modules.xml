@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/fog-pdns.iml" filepath="$PROJECT_DIR$/.idea/fog-pdns.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../fog-powerdns/.idea/fog-pdns.iml" filepath="$PROJECT_DIR$/../fog-powerdns/.idea/fog-pdns.iml" />
     </modules>
   </component>
 </project>

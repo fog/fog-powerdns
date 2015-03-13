@@ -1,5 +1,5 @@
 require 'fog/core/model'
-require 'fog/pdns/models/dns/rrsets'
+# require 'fog/powerdns/models/dns/rrsets'
 
 module Fog
   module DNS
@@ -15,14 +15,17 @@ module Fog
           true
         end
 
-        # end
-        # def rrsets
-        #   @rrsets ||= begin
-        #                 Fog::DNS::PowerDNS::RRsets.new(
 
-        #                 )
-        #   end
-        # end
+        def records
+          # TODO: Should rewrite this
+          @records ||= begin
+            Fog::DNS::PowerDNS::Records.new(
+              :zone     => self,
+              :service  => service
+            )
+          end
+        end
+
 
         def save
           requires :zone

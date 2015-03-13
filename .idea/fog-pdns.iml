@@ -3,9 +3,9 @@
   <component name="FacetManager">
     <facet type="gem" name="Ruby Gem">
       <configuration>
-        <option name="GEM_APP_ROOT_PATH" value="$MODULE_DIR$" />
-        <option name="GEM_APP_TEST_PATH" value="$MODULE_DIR$/test" />
-        <option name="GEM_APP_LIB_PATH" value="$MODULE_DIR$/lib" />
+        <option name="GEM_APP_ROOT_PATH" value="$MODULE_DIR$/../fog-pdns" />
+        <option name="GEM_APP_TEST_PATH" value="$MODULE_DIR$/../fog-pdns/test" />
+        <option name="GEM_APP_LIB_PATH" value="$MODULE_DIR$/../fog-pdns/lib" />
       </configuration>
     </facet>
   </component>

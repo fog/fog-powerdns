@@ -8,15 +8,20 @@ module Fog
         # * server<~String> - server id
         #
         # ==== Returns
-        # TODO: Fill this out
-        #
+        # * response<~Excon::Response>:
+        #   * body<~Array>:
+        #       * statistics<~Hash>:
+        #         * 'type': <~String>,
+        #         * 'name': <~String>,
+        #         * 'value': <~String>
+        #   * status<~Integer> - 200 when successful
 
         def get_server_stats(server)
           request(
               :expects  => 200,
               :method   => 'GET',
               :path     => "/servers/#{server}/statistics"
-          )
+          ).body
         end
 
       end

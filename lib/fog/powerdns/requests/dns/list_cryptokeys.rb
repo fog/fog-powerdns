@@ -8,7 +8,17 @@ module Fog
         # Need server_id, zone_id
         #
         # ==== Returns
-        # TODO: Fill this out
+        # * response<~Excon::Response>:
+        #   * body<~Array>:
+        #       * Cryptokey<~Hash>:
+        #       * 'type': <~String>,
+        #       * 'id': <~Integer>,
+        #       * 'active': <~Boolean>,
+        #       * 'keytype': <~String>,
+        #       * 'dnskey': <~String>,
+        #       * 'content': <~String>,
+        #       * 'ds': <~Array>
+        #   * status<~Integer> - 200 when successful
         #
 
         def list_cryptokeys(server, zone)
@@ -16,7 +26,7 @@ module Fog
               :expects  => 200,
               :method   => 'GET',
               :path     => "/servers/#{server}/zones/#{zone}/cryptokeys"
-          )
+          ).body
         end
 
       end

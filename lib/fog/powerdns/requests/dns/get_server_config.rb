@@ -10,15 +10,19 @@ module Fog
         # * config<~String> - config name
         #
         # ==== Returns
-        # TODO: Fill this out
-        #
+        # * response<~Excon::Response>:
+        #   * body<~Hash>:
+        #     * 'type': <~String>,
+        #     * 'name': <~String>,
+        #     * 'value': <~String>
+        #   * status<~String> - 200 when successful
 
         def get_server_config(server, config)
           request(
               :expects  => 200,
               :method   => 'GET',
               :path     => "/servers/#{server}/config/#{config}"
-          )
+          ).body
         end
 
       end

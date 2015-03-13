@@ -1,4 +1,4 @@
-# Fog::Pdns
+# Fog::PowerDNS
 
 Module for the 'fog' gem to support PowerDNS
 
@@ -7,7 +7,7 @@ Module for the 'fog' gem to support PowerDNS
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'fog-pdns'
+gem 'fog-powerdns'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install fog-pdns
+    $ gem install fog-powerdns
 
 ## Usage
 
@@ -30,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/fog-pdns/fork )
+1. Fork it ( https://github.com/[my-github-username]/fog-powerdns/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
