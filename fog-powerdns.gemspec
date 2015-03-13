@@ -9,10 +9,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Chris Luo"]
   spec.email         = ["luo_christopher@bah.com"]
 
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
-  end
-
   spec.summary       = %q{Module for the 'fog' gem to support PowerDNS DNS services.}
   spec.description   = %q{This library can be used as a module for 'fog' or as a standalone provider to use PowerDNS DNS services in applications.}
   spec.homepage      = "http://github.com/cluobah/fog-powerdns"
