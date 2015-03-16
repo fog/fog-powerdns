@@ -1,4 +1,4 @@
-require 'fog/powerdns/core'
+require 'fog/powerdns'
 
 module Fog
   module DNS
