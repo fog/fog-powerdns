@@ -43,13 +43,7 @@ module Fog
           @port       = options[:port]      || 8081
           @scheme     = options[:scheme]    || 'http'
           @api_version= options[:api_version]    || 'v1'
-          puts @api_key
-          puts @persistent
-          puts @connection_options
-          puts @scheme
-          puts @host
-          puts @port
-          puts @api_version
+          
           @connection = Fog::XML::Connection.new("#{@scheme}://#{@host}:#{@port}", @persistent, @connection_options)
         end
 
