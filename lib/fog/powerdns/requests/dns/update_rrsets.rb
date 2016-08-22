@@ -30,15 +30,17 @@ module Fog
 
 
         def update_rrsets(server, zone, options = {})
+          body = {}
+
           options.each { |option, value|
             body[option] = value;
           }
 
           request(
               :body     => Fog::JSON.encode(body),
-              :expects  => 200,
+              :expects  => 204,
               :method   => 'PATCH',
-              :path     => "/api/#{@api_version}/servers/#{server}/zones/#{zone}/"
+              :path     => "/api/#{@api_version}/servers/#{server}/zones/#{zone}"
           )
         end
       end

@@ -36,7 +36,8 @@ module Fog
         #   * status<~Integer>  200 when successful
 
         def update_zone(server, zone, options = {})
-
+          body = {}
+          
           options.each { |option, value|
             body[option] = value;
           }
