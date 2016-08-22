@@ -40,7 +40,7 @@ module Fog
           request(
               :expects  => 200,
               :method   => 'PUT',
-              :path     => "/servers/#{server}/zones/#{zone}/axfr-retrieve"
+              :path     => "/api/#{@api_version}/servers/#{server}/zones/#{zone}/axfr-retrieve"
           )
         end
 

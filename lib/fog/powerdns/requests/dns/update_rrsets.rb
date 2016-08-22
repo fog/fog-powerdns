@@ -38,7 +38,7 @@ module Fog
               :body     => Fog::JSON.encode(body),
               :expects  => 200,
               :method   => 'PATCH',
-              :path     => "/servers/#{server}/zones/#{zone}/"
+              :path     => "/api/#{@api_version}/servers/#{server}/zones/#{zone}/"
           )
         end
       end

@@ -45,7 +45,7 @@ module Fog
               :body     => Fog::JSON.encode(body),
               :expects  => 200,
               :method   => 'PUT',
-              :path     => "/servers/#{server}/zones/#{zone}"
+              :path     => "/api/#{@api_version}/servers/#{server}/zones/#{zone}"
           ).body
         end
       end

@@ -27,7 +27,7 @@ module Fog
           request(
               :expects  => 200,
               :method   => 'GET',
-              :path     => "/servers/#{server}/zones/#{zone}/cryptokeys/#{cryptokey}"
+              :path     => "/api/#{@api_version}/servers/#{server}/zones/#{zone}/cryptokeys/#{cryptokey}"
           ).body
         end
 

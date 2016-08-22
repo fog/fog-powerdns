@@ -18,7 +18,7 @@ module Fog
           request(
               :expects  => 200,
               :method   => 'GET',
-              :path     => "/servers/#{server}/search-log?q=#{term}"
+              :path     => "/api/#{@api_version}/servers/#{server}/search-log?q=#{term}"
           ).body
         end
 
