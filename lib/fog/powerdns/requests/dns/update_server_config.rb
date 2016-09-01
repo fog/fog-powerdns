@@ -23,7 +23,7 @@ module Fog
                 :body     => body,
                 :expects  => 200,
                 :method   => 'PUT',
-                :path     => "/servers/#{server}/config/#{config}"
+                :path     => "/api/#{@api_version}/servers/#{server}/config/#{config}"
             ).body
           else
             puts 'Only allows_from config is allowed.'

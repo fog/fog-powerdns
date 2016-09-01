@@ -20,7 +20,7 @@ module Fog
           request(
               :expects  => 204,
               :method   => 'DELETE',
-              :path     => "/servers/#{server}/zones/#{zone}"
+              :path     => "/api/#{@api_version}/servers/#{server}/zones/#{zone}"
           )
         end
       end

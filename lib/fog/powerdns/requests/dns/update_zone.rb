@@ -36,7 +36,8 @@ module Fog
         #   * status<~Integer>  200 when successful
 
         def update_zone(server, zone, options = {})
-
+          body = {}
+          
           options.each { |option, value|
             body[option] = value;
           }
@@ -45,7 +46,7 @@ module Fog
               :body     => Fog::JSON.encode(body),
               :expects  => 200,
               :method   => 'PUT',
-              :path     => "/servers/#{server}/zones/#{zone}"
+              :path     => "/api/#{@api_version}/servers/#{server}/zones/#{zone}"
           ).body
         end
       end

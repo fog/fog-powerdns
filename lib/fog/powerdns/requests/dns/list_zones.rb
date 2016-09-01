@@ -37,7 +37,7 @@ module Fog
           request(
               :expects  => 200,
               :method   => 'GET',
-              :path     => "/servers/#{server}/zones"
+              :path     => "/api/#{@api_version}/servers/#{server}/zones"
           ).body
         end
 
