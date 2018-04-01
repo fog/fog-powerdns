@@ -1,5 +1,5 @@
 require 'fog/core/collection'
-require 'fog/rage4/models/dns/record'
+
 module Fog
   module DNS
     class PowerDNS

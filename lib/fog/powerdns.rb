@@ -4,6 +4,10 @@ require 'fog/xml'
 require 'fog/json'
 
 module Fog
+  module DNS
+    autoload :PowerDNS, File.expand_path('../dns/powerdns')
+  end
+
   module PowerDNS
     extend Fog::Provider
 
