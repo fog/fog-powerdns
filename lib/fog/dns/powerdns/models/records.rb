@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'fog/core/collection'
 
 module Fog
@@ -13,8 +15,6 @@ module Fog
           data = service.get_zone(zone)[:records]
           load(data)
         end
-
-
       end
     end
   end

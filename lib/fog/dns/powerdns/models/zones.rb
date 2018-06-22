@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'fog/core/collection'
 require 'fog/dns/powerdns/models/zone'
 
@@ -22,7 +24,6 @@ module Fog
         rescue Fog::Service::NotFound
           puts 'help!'
         end
-
       end
     end
   end

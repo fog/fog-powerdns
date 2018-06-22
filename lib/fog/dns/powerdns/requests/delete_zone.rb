@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Fog
   module DNS
     class PowerDNS
@@ -18,9 +20,9 @@ module Fog
 
         def delete_zone(server, zone)
           request(
-              :expects  => 204,
-              :method   => 'DELETE',
-              :path     => "/api/#{@api_version}/servers/#{server}/zones/#{zone}"
+            expects: 204,
+            method: 'DELETE',
+            path: "/api/#{@api_version}/servers/#{server}/zones/#{zone}"
           )
         end
       end

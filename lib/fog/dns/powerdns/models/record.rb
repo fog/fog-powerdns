@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'fog/core/model'
 
 module Fog
@@ -13,18 +15,19 @@ module Fog
         attribute :disabled
         attribute :set_ptr
 
-        def initialize(attributes={})
+        def initialize(attributes = {})
           super
         end
+
         def domain
           name
         end
+
         def destroy
           # service.delete_record(id)
           # TODO: maybe hack our own delete? this does nothing for now
           true
         end
-
       end
     end
   end

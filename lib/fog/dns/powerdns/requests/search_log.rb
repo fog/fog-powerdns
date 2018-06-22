@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Fog
   module DNS
     class PowerDNS
@@ -16,12 +18,11 @@ module Fog
 
         def search_log(server, term)
           request(
-              :expects  => 200,
-              :method   => 'GET',
-              :path     => "/api/#{@api_version}/servers/#{server}/search-log?q=#{term}"
+            expects: 200,
+            method: 'GET',
+            path: "/api/#{@api_version}/servers/#{server}/search-log?q=#{term}"
           ).body
         end
-
       end
     end
   end

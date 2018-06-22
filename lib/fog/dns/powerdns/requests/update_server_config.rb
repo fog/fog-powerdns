@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Fog
   module DNS
     class PowerDNS
@@ -20,16 +22,15 @@ module Fog
         def update_server_config(server, config, body)
           if config == 'allows_from'
             request(
-                :body     => body,
-                :expects  => 200,
-                :method   => 'PUT',
-                :path     => "/api/#{@api_version}/servers/#{server}/config/#{config}"
+              body: body,
+              expects: 200,
+              method: 'PUT',
+              path: "/api/#{@api_version}/servers/#{server}/config/#{config}"
             ).body
           else
             puts 'Only allows_from config is allowed.'
           end
         end
-
       end
     end
   end

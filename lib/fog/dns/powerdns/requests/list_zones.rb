@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Fog
   module DNS
     class PowerDNS
@@ -35,12 +37,11 @@ module Fog
 
         def list_zones(server)
           request(
-              :expects  => 200,
-              :method   => 'GET',
-              :path     => "/api/#{@api_version}/servers/#{server}/zones"
+            expects: 200,
+            method: 'GET',
+            path: "/api/#{@api_version}/servers/#{server}/zones"
           ).body
         end
-
       end
     end
   end

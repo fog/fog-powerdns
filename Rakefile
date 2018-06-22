@@ -1,11 +1,13 @@
-require "bundler/gem_tasks"
+# frozen_string_literal: true
 
-def name
-  @name ||= Dir['*.gemspec'].first.split('.').first
+require 'bundler/gem_tasks'
+require 'rake/testtask'
+
+Rake::TestTask.new do |t|
+  t.libs.push %w[spec]
+  t.test_files = FileList['spec/**/*_spec.rb']
+  t.verbose = true
 end
 
-desc "Open an irb session preloaded with this library"
-task :console do
-  puts "#{name}"
-  sh "irb -rubygems -r ./lib/fog/powerdns.rb"
-end
+desc 'Default Task'
+task default: [:test]

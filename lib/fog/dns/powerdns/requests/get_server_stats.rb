@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Fog
   module DNS
     class PowerDNS
@@ -18,12 +20,11 @@ module Fog
 
         def get_server_stats(server)
           request(
-              :expects  => 200,
-              :method   => 'GET',
-              :path     => "/api/#{@api_version}/servers/#{server}/statistics"
+            expects: 200,
+            method: 'GET',
+            path: "/api/#{@api_version}/servers/#{server}/statistics"
           ).body
         end
-
       end
     end
   end

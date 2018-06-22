@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Fog
   module DNS
     class PowerDNS
@@ -19,12 +21,11 @@ module Fog
 
         def get_server_config(server, config)
           request(
-              :expects  => 200,
-              :method   => 'GET',
-              :path     => "/api/#{@api_version}/servers/#{server}/config/#{config}"
+            expects: 200,
+            method: 'GET',
+            path: "/api/#{@api_version}/servers/#{server}/config/#{config}"
           ).body
         end
-
       end
     end
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'fog/powerdns/version'
 require 'fog/core'
 require 'fog/xml'

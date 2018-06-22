@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Fog
   module DNS
     class PowerDNS
@@ -28,19 +30,18 @@ module Fog
         #         * 'content': <~String>,
         #         * 'modfied_at': <~Integer>
 
-
         def update_rrsets(server, zone, options = {})
           body = {}
 
-          options.each { |option, value|
-            body[option] = value;
-          }
+          options.each do |option, value|
+            body[option] = value
+          end
 
           request(
-              :body     => Fog::JSON.encode(body),
-              :expects  => 204,
-              :method   => 'PATCH',
-              :path     => "/api/#{@api_version}/servers/#{server}/zones/#{zone}"
+            body: Fog::JSON.encode(body),
+            expects: 204,
+            method: 'PATCH',
+            path: "/api/#{@api_version}/servers/#{server}/zones/#{zone}"
           )
         end
       end

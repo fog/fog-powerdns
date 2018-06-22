@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Fog
   module DNS
     class PowerDNS
@@ -38,19 +40,19 @@ module Fog
 
         def create_zone(server, name, nameservers, options = {})
           body = {
-              "name" => name,
-              "nameservers" => nameservers
+            'name' => name,
+            'nameservers' => nameservers
           }
 
-          options.each { |option, value|
-            body[option] = value;
-          }
+          options.each do |option, value|
+            body[option] = value
+          end
 
           request(
-              :body     => Fog::JSON.encode(body),
-              :expects  => 201,
-              :method   => 'POST',
-              :path     => "/api/#{@api_version}/servers/#{server}/zones"
+            body: Fog::JSON.encode(body),
+            expects: 201,
+            method: 'POST',
+            path: "/api/#{@api_version}/servers/#{server}/zones"
           ).body
         end
       end

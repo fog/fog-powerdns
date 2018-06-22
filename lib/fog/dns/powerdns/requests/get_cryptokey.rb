@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Fog
   module DNS
     class PowerDNS
@@ -25,12 +27,11 @@ module Fog
 
         def get_cryptokey(server, zone, cryptokey)
           request(
-              :expects  => 200,
-              :method   => 'GET',
-              :path     => "/api/#{@api_version}/servers/#{server}/zones/#{zone}/cryptokeys/#{cryptokey}"
+            expects: 200,
+            method: 'GET',
+            path: "/api/#{@api_version}/servers/#{server}/zones/#{zone}/cryptokeys/#{cryptokey}"
           ).body
         end
-
       end
     end
   end

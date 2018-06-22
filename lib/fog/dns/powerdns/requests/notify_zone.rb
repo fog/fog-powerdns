@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Fog
   module DNS
     class PowerDNS
@@ -38,12 +40,11 @@ module Fog
 
         def notify_zone(server, zone)
           request(
-              :expects  => 200,
-              :method   => 'PUT',
-              :path     => "/api/#{@api_version}/servers/#{server}/zones/#{zone}/notify"
+            expects: 200,
+            method: 'PUT',
+            path: "/api/#{@api_version}/servers/#{server}/zones/#{zone}/notify"
           )
         end
-
       end
     end
   end
