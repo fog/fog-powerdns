@@ -1,5 +1,4 @@
 require 'fog/core/model'
-# require 'fog/powerdns/models/dns/rrsets'
 
 module Fog
   module DNS

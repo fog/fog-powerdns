@@ -1,17 +1,15 @@
-require 'fog/powerdns'
-
 module Fog
   module DNS
     class PowerDNS < Fog::Service
       requires :pdns_api_key
       recognizes :host, :port, :persistent, :scheme, :timeout
 
-      model_path 'fog/powerdns/models/dns'
+      model_path 'fog/dns/powerdns/models'
       model       :zone
       collection  :zones
       # collection  :rrsets
 
-      request_path 'fog/powerdns/requests/dns'
+      request_path 'fog/dns/powerdns/requests'
       request :list_servers
       request :get_server
       request :list_server_configs
