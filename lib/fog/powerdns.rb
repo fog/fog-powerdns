@@ -7,7 +7,7 @@ require 'fog/json'
 
 module Fog
   module DNS
-    autoload :PowerDNS, File.expand_path('../dns/powerdns')
+    autoload :PowerDNS, File.expand_path('../dns/powerdns', __FILE__)
   end
 
   module PowerDNS
